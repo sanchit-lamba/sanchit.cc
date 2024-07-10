@@ -1,18 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic HTML Webpage</title>
+    <title>sanchit's den</title>
+    <link rel='stylesheet' href='css/main.css' />
+    <link rel='icon' type='image/x-icon' href='img/icon.png' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
 </head>
-<style>
-body {
-	background-image: url('bg.gif');
-}
-</style>
 <body>
-    <h1>Welcome to My Basic HTML Webpage</h1>
-    <p>This is a paragraph of text on my basic webpage. testing balls</p>
+<span style='position: fixed;'>
+			<div class='dnav'>
+				<a href='index.html#'><img src='img/cat.gif' /></a>
+			</div>
+			<div class='dnav'>
+				&nbsp;<a href='index.html#about'>about</a>
+			</div>
+			<div class='dnav'>
+				&nbsp;<a href='index.html#contact'>contact</a>
+			</div>
+			<div class='dnav'>
+				&nbsp;<a href='index.html#projects'>projects</a>
+			</div>
+			<div class='dnav'>
+				&nbsp;<a href='index.html#rambles'>rambles</a>
+			</div>
+                <div class="dnav" style="text-align:center; vertical-align: middle;">
+                <p>Currently<div></div><br>writing bash to auto update this text field with discord status</p>
+            </div>
+		</span>
+
+<section id='about'>
+    <h1>About</h1>
+
+    <p>welcome to <u>sanchit.cc</u> <br> This is my little corner on the Internet with random stuff vaguely relating to me</p>
+
+    <h2>Quick Facts</h2>
+
+    <ul>
+        <li>From <u>India</u></li>
+        <li>Study at an extremely overpriced and <u><b>shitty</b></u> University</li>
+        <li>My main programming language is Python</li>
+        <li>Rarely touch <u>grass</u></li>
+        <li>Spend most of my time doing random stuff that happened to have had peaked my interest that week</li>
+    </ul>
+    <h2>About the site</h2>
+    <ul>It's only running HTML and CSS on an NGINX server ran by our overlords at <b><i>--    M i c r o s o f t   --</i></b> it was greatly inspired by the sites made by <a href="https://neocities.org/">Neocities</a> community</ul>
+</section>
+
+<section id='contact'>
+    <h1>Contact</h1>
+
+    <ul>
+        <li>mail @ sanchit.cc</li>
+        <li><a href="https://github.com/sanchit-lamba">github.com/sanchit-lamba</a>
+        <li><a href="https://www.linkedin.com/in/sanchit-lamba/">linkedin.com/in/sanchit-lamba/</a></li>
+        <li>Uhhh! send me a Pigeon maybe?idk</li>
+    </ul>
+</section>
+
+<section id='projects'>
+    <h1>Projects</h1>
+    <div class="link"><h2 align="left" style="display:inline">Autonomous Vehicle Guidance System</h2><a style="float: right" href="https://github.com/sanchit-lamba/zesta-ichack-phase2">    Github     </a><a style="float: right" href="https://sanchit.cc/avgs">|sanchit.cc/dds  |  </a></h2> </div>
+    <ul>
+        <li>Ingestion of data from the simulated lidars and cameras was done using a simple numpy array and opencv
+            respectively.</li>
+        <li>The RGBA data from OpenCV was then passed onto a CNN that simulated the camera data gathered from the car
+            and the surrounding environment.</li>
+        <li>A reinforcement learning model was fed all the pre-processed input data, which included LiDAR point clouds and
+            visual features from the CNN. By processing the combined sensor inputs, this model made used Proximal Policy
+            Optimization (PPO), which allowed the system to continuously interact with the simulated environment and learn
+            the best driving behaviors.</li>
+        <li> The reinforcement learning model was designed with a reward system that penalized crashes and dangerous driving
+            behaviors while periodically rewarding safe navigation and adherence to traffic rules.</li>
+    </ul>
+    <div class="link"><h2 align="left" style="display:inline">Drowsiness detection system</h2> <a style="float: right" href="https://github.com/sanchit-lamba/zesta-ichack-drowsiness-detection">    Github     </a> <a style="float: right" href="https://sanchit.cc/dds">|sanchit.cc/avgs  |  </a></li></div>
+    <ul>
+        <li>Trained a model to detect drowsiness among drivers to avoid crashes.
+        <li>The model detects yawns and how open the eye is and gives out a drowsiness score to the driver</li>
+        <li> Input data from the cameras is convoluted turned into an array after feature extraction is done</li>
+        <li>The real time data gathered from multiple images is fed into the model trained using sample datasets sourced from
+            kaggle with marked image.</li>
+    </ul>
+    <div class="link"><h2 align="left" style="display:inline">Doc-Assist LLM</h2> <a style="float: right" href="https://github.com/DivitMittal/DocAssist-LLM">    Github     </a> <a style="float: right" href="https://sanchit.cc/da-llm">|sanchit.cc/avgs  |  </a></li></div>
+    <ul>
+        <li>PENDING WRITEUP / RESUME UPDATE</li>
+    </ul>
+</section>
+
+<section id='rambles'>
+    <h1>Blog</h1>
+
+    <p><b>Under Construction(im too lazy)</b></p>
+</section>
+
+<section id="status"><p>palls</p></section>
+
+<div class='mnav'>
+    <a href='index.html#'>/</a>&nbsp;
+    <a href='index.html#about'>about</a>&nbsp;
+    <a href='index.html#contact'>contact</a>&nbsp;
+    <a href='index.html#projects'>projects</a>&nbsp;
+    <a href='index.html#rambles'>rambles</a>
+</div>
 </body>
 </html>
 
