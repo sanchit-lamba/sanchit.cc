@@ -8,8 +8,8 @@
 
 @font-face {
     font-family: 'vga';
-    src: url('vga.woff2') format('woff2'),
-    url('vga.woff') format('woff');
+    src: url('../css/vga.woff2') format('woff2'),
+    url('../css/vga.woff') format('woff');
 }
 
 body {
