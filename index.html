@@ -27,7 +27,34 @@
                 <p>Currently<div></div><br>
 <!-- look here regex!!! -->"XBRL sux why would someone want to make that a standard?"</p>
             </div>
-		</span>
+	<div class="dnav" style="text-align:center; vertical-align: middle;">
+                <p>Listening to<div></div><br>
+		<!-- look here regex!!! -->
+<p id="nowPlaying"></p>
+    <img id="trackImage" alt="Track Image" style="display:none; max-width:100%; height:auto; text-align:center">
+<script>
+  // Fetch recent tracks using the Last.fm API
+  fetch('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sanchitlamba&api_key=c1797de6bf0b7e401b623118120cd9e1&limit=1&format=json')
+    .then(response => response.json())  // Convert response to JSON
+    .then(data => {
+      const track = data.recenttracks.track[0];  // Get the latest track
+      document.getElementById('nowPlaying').textContent =  track.name;  // Update the track name in the <p> element
+
+      const largeImage = track.image.find(img => img.size === "large");  // Find the large size image
+      if (largeImage && largeImage['#text']) {  // Check if the image exists and has a valid URL
+        const imgElement = document.getElementById('trackImage');  // Get the image element
+        imgElement.src = largeImage['#text'];  // Set the image source
+        imgElement.style.display = 'block';  // Make the image visible
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);  // Log any errors
+      document.getElementById('nowPlaying').textContent = 'Error loading track';  // Display error message in case of failure
+    });
+</script>
+
+	            </div>
+	</span>
 
 <section id='about'>
     <h1>About</h1>
