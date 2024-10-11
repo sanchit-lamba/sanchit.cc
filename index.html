@@ -25,7 +25,7 @@
 			</div>
                 <div class="dnav" style="text-align:center; vertical-align: middle;">
                 <p>Currently<div></div><br>
-<!-- look here regex!!! -->"XBRL sux why would someone want to make that a standard?"</p>
+<!-- look here regex!!! -->"Running low on attendance"</p>
             </div>
 	<div class="dnav" style="text-align:center; vertical-align: middle;">
                 <p>Listening to<div></div><br>
@@ -40,7 +40,7 @@
       const track = data.recenttracks.track[0];  // Get the latest track
       document.getElementById('nowPlaying').textContent =  track.name;  // Update the track name in the <p> element
 
-      const largeImage = track.image.find(img => img.size === "large");  // Find the large size image
+      const largeImage = track.image.find(img => img.size === "extralarge");  Find the large size image
       if (largeImage && largeImage['#text']) {  // Check if the image exists and has a valid URL
         const imgElement = document.getElementById('trackImage');  // Get the image element
         imgElement.src = largeImage['#text'];  // Set the image source
