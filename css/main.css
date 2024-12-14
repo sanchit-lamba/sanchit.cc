@@ -6,14 +6,12 @@
     --cb: #000;
 }
 
-/*
- * alternative font(not very legible
+
 @font-face {
     font-family: 'vga';
-    src: url('../css/vga.woff2') format('woff2'),
-    url('../css/vga.woff') format('woff');
+    src: url('../css/iosevka.woff2') format('woff2'),
+    url('../css/iosevka.woff') format('woff');
 }
-*/
 
 body {
     background: url('../img/bg.gif') no-repeat var(--cb);
