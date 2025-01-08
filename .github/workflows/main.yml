@@ -1,29 +1,39 @@
-name: Generate Sitemap
+name: Generate XML Sitemap
 
 on:
   push:
-    branches:
-      - main
-  schedule:
-    - cron: '0 0 * * 0'  # Runs weekly at midnight on Sundays
+    branches: [ main ]
 
 jobs:
-  build:
+  sitemap_job:
     runs-on: ubuntu-latest
+    name: Generate a sitemap
 
     steps:
-      - name: Checkout repository
+      - name: Checkout the repo
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 
 
       - name: Generate Sitemap
         uses: cicirello/generate-sitemap@v1.10.0
         with:
-          path-to-root: .  # optional, default is .
-          base-url-path: https://sanchit.cc/  # optional, default is https://web.address.of.your.nifty.website/
-          include-html: true  # optional, default is true
-          include-pdf: true  # optional, default is true
-          sitemap-format: xml  # optional, default is xml
-          additional-extensions: ''  # optional, default is empty
-          drop-html-extension: false  # optional
-          date-only: false  # optional
-          exclude-paths: ''  # optional, default is empty
+          path-to-root: .  # Optional, defaults to entire repo
+          base-url-path: https://sanchit.cc/  # Update to your site's URL
+          include-html: true
+          include-pdf: true
+          sitemap-format: xml
+          additional-extensions: ''
+          drop-html-extension: false
+          date-only: false
+          exclude-paths: ''
+
+      - name: Commit and push
+        run: |
+          if [[ `git status --porcelain sitemap.xml` ]]; then
+            git config --global user.name 'github-actions'
+            git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git add sitemap.xml
+            git commit -m "Automated sitemap update"
+            git push
+          fi
