@@ -10,11 +10,6 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
 
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
       - name: Fetch and update HTML
         run: |
           API_RESPONSE=$(curl -s https://api.lanyard.rest/v1/users/1189451974043783200)
