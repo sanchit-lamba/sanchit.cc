@@ -1,0 +1,19 @@
+  - name: generate-sitemap
+  uses: cicirello/generate-sitemap@v1.10.0
+  with:
+    path-to-root: # optional, default is .
+    base-url-path: https://sanchit.cc/ # optional, default is https://web.address.of.your.nifty.website/
+    include-html: true # optional, default is true
+    # Indicates whether to include pdf files in the sitemap.
+    include-pdf: true # optional, default is true
+    # Indicates if sitemap should be formatted in xml.
+    sitemap-format: # optional, default is xml
+    # Space separated list of additional file extensions to include in sitemap.
+    additional-extensions: # optional, default is 
+    # Enables dropping .html from urls in sitemap.
+    drop-html-extension: # optional
+    # Pass true to include only the date without the time in XML sitemaps; and false to include full date and time.
+    date-only: # optional
+    # Space separated list of paths to exclude from the sitemap.
+    exclude-paths: # optional, default is 
+          
