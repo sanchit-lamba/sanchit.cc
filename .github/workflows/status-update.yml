@@ -15,9 +15,6 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Fetch and update HTML
         run: |
           API_RESPONSE=$(curl -s https://api.lanyard.rest/v1/users/1189451974043783200)
