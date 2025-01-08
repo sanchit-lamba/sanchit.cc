@@ -5,11 +5,12 @@
     <link rel='stylesheet' href='css/main.css' />
     <link rel='icon' type='image/x-icon'  href='img/favicon.png' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='description' content='Welcome to Sanchit's personal website. Explore projects, rambles, and more.' />
 </head>
 <body>
 <span style='position: fixed;'>
 			<div class='dnav'>
-				<a href='index.html#'><img src='img/cat.gif' /></a>
+				<a href='index.html#'><img src='img/cat.gif' alt='Cat GIF' /></a>
 			</div>
 			<div class='dnav'>
 				&nbsp;<a href='index.html#about'>about</a>
@@ -35,21 +36,21 @@
 <script>
   // Fetch recent tracks using the Last.fm API
   fetch('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sanchitlamba&api_key=c1797de6bf0b7e401b623118120cd9e1&limit=1&format=json')
-    .then(response => response.json())  // Convert response to JSON
+    .then(response => response.json())  
     .then(data => {
-      const track = data.recenttracks.track[0];  // Get the latest track
-      document.getElementById('nowPlaying').textContent =  track.name;  // Update the track name in the <p> element
+      const track = data.recenttracks.track[0];  
+      document.getElementById('nowPlaying').textContent =  track.name;  
 
-      const largeImage = track.image.find(img => img.size === "large");  // Find the large size image
-      if (largeImage && largeImage['#text']) {  // Check if the image exists and has a valid URL
-        const imgElement = document.getElementById('trackImage');  // Get the image element
-        imgElement.src = largeImage['#text'];  // Set the image source
-        imgElement.style.display = 'block';  // Make the image visible
+      const largeImage = track.image.find(img => img.size === "large");  
+      if (largeImage && largeImage['#text']) {  
+        const imgElement = document.getElementById('trackImage');  
+        imgElement.src = largeImage['#text'];  
+        imgElement.style.display = 'block';  
       }
     })
     .catch(error => {
-      console.error('Error:', error);  // Log any errors
-      document.getElementById('nowPlaying').textContent = 'Error loading track';  // Display error message in case of failure
+      console.error('Error:', error);  
+      document.getElementById('nowPlaying').textContent = 'Error loading track';  
     });
 </script>
 
@@ -70,7 +71,8 @@
         <li>Spend most of my time doing random stuff that happened to have had peaked my interest that week</li>
     </ul>
     <h2>About the site</h2>
-    <ul>It's only running HTML and CSS on an NGINX server with bash periodically updating the status &ltdiv> the vps is ran by our overlords at <p style="text-decoration: underline overline; display: inline"><b><i>|M i c r o s o f t|</i></b></p> it's design was greatly inspired by the sites made by <a href="https://neocities.org/">Neocities</a> community</ul>
+    <ul>It only comprises of HTML and CSS hosted on NGINX server with bash periodically updating the status &ltdiv> the vps is ran by our overlords at <p style="text-decoration: underline overline; display: inline"><b><i>| M i c r o s o f t |</i></b></p> it's design was greatly inspired by the sites made by <a href="https://neocities.org/">Neocities</a> community</ul>
+    <ul><br>The Typeface is Berkeley Mono and it looks exceptionally pretty I might add.</ul>
 </section>
 
 <section id='contact'>
@@ -119,7 +121,7 @@
         <li>The LLM would then spew out a result relavent to the query and all this is possible even if the documentation isin’t
             a part of the initial training data</li>
     </ul>
-</section>
+</section> 
 
 <section id='rambles'>
     <h1>Blog</h1>

@@ -9,8 +9,8 @@
 
 @font-face {
     font-family: 'vga';
-    src: url('../css/iosevka.woff2') format('woff2'),
-    url('../css/iosevka.woff') format('woff');
+    src: url('../css/BerkeleyMono-Regular.woff2') format('woff2'),
+    url('../css/BerkeleyMono-Regular.woff') format('woff');
 }
 
 body {
