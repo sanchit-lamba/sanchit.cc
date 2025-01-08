@@ -20,23 +20,9 @@ jobs:
 
       - name: Fetch and update HTML
         run: |
-          # Install a CLI tool or create a Node script
-          echo 'const fs = require("fs");' > update.js
-          echo 'const https = require("https");' >> update.js
-          echo 'const filePath = "index.html";' >> update.js
-          echo 'const regex = /<!--\s*look\s+here\s+regex!!!\s*-->"*"/g;' >> update.js
-          echo 'https.get("https://api.lanyard.rest/v1/users/1189451974043783200", res => {' >> update.js
-          echo '  let body = "";' >> update.js
-          echo '  res.on("data", chunk => body += chunk);' >> update.js
-          echo '  res.on("end", () => {' >> update.js
-          echo '    const newData = JSON.parse(body).someField;' >> update.js
-          echo '    let html = fs.readFileSync(filePath, "utf8");' >> update.js
-          echo '    // Modify the HTML based on your pattern' >> update.js
-          echo '    html = html.replace(regex, newData);' >> update.js
-          echo '    fs.writeFileSync(filePath, html, "utf8");' >> update.js
-          echo '  });' >> update.js
-          echo '});' >> update.js
-          node update.js
+          API_RESPONSE=$(curl -s https://api.lanyard.rest/v1/users/1189451974043783200)
+          NEWDATA=$(echo "$API_RESPONSE" | jq -r '.data.activities[0].state')
+          sed -i -E "s@(<!--\\s*look\\s+here\\s+regex!!!\\s*-->)\\s*\"[^\"]*\"@\\1 \"$NEWDATA\"@g" index.html
 
       - name: Commit changes
         run: |
