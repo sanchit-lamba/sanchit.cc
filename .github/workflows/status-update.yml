@@ -13,7 +13,7 @@ jobs:
 
       - name: Fetch and update HTML
         run: |
-          API_RESPONSE=$(curl -s https://api.lanyard.rest/v1/users/1159918868601503904)
+          API_RESPONSE=$(curl -s https://api.lanyard.rest/v1/users/1159918868601503904 )
           NEWDATA=$(echo "$API_RESPONSE" | jq -r '.data.activities[0].state')
           sed -i -E "s@(<!--\\s*look\\s+here\\s+regex!!!\\s*-->)\\s*\"[^\"]*\"@\\1 \"$NEWDATA\"@g" index.html
 
