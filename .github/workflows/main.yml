@@ -1,4 +1,4 @@
-  - name: generate-sitemap
+name: generate-sitemap
   uses: cicirello/generate-sitemap@v1.10.0
   with:
     path-to-root: # optional, default is .
