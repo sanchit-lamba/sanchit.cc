@@ -6,7 +6,6 @@
     --cb: #000;
 }
 
-
 @font-face {
     font-family: 'vga';
     src: url('../css/BerkeleyMono-Regular.woff2') format('woff2'),
@@ -20,6 +19,10 @@ body {
     color: var(--cw);
     font-family: 'vga', monospace;
     word-break: break-word;
+    /* Add space for ads */
+    margin-top: 120px; /* Space for top banner ad */
+    margin-bottom: 150px; /* Space for bottom ad */
+    margin-right: 200px; /* Space for sidebar ads */
 }
 
 div, section {
@@ -33,6 +36,8 @@ section {
     display: none;
     margin-left: 180px;
     padding: 8px 16px 8px 16px;
+    /* More space between sections for ads */
+    margin-bottom: 40px;
 }
 
 section:target {
@@ -45,6 +50,7 @@ h1 {
     font-weight: normal;
     margin: 4px 0 12px 0;
 }
+
 h2 {
     font-size: 1em;
     font-weight: normal;
@@ -68,6 +74,8 @@ img {
 
 li {
     list-style-image: url('../img/li.gif');
+    /* Add spacing between list items for potential ads */
+    margin-bottom: 15px;
 }
 
 .dnav {
@@ -97,14 +105,116 @@ li {
     padding-right: 13px;
 }
 
+/* Ad Container Styling for Maximum Visibility */
+.ad-container {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ad-label {
+    font-size: 10px;
+    color: #666;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-ads {
+    position: fixed;
+    right: 10px;
+    top: 20%;
+    width: 180px;
+    z-index: 1000;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.top-banner-ad {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: white;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.bottom-banner-ad {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-top: 2px solid #ddd;
+    z-index: 999;
+    padding: 15px;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.inline-ad {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f5f5f5;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Increase spacing around content for ad placement */
+p {
+    margin: 15px 0;
+    line-height: 1.6;
+}
+
+ul {
+    margin: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .sidebar-ads { 
+        display: none; 
+    }
+    body { 
+        margin-right: 0; 
+    }
+}
+
 @media (max-height: 330px){
     .mnav { display: block; }
     .dnav { display: none; }
     section { margin-left: 0; margin-bottom: 36px; }
+    body { margin-top: 60px; }
+    .top-banner-ad { padding: 5px; }
 }
 
 @media (max-width: 600px){
     .mnav { display: block; }
     .dnav { display: none; }
     section { margin-left: 0; margin-bottom: 36px; }
+    body { 
+        margin-top: 100px;
+        margin-bottom: 120px;
+    }
+    .ad-container {
+        margin: 15px 0;
+        padding: 10px;
+    }
+}
+
+/* Ensure ads are visible and properly spaced */
+.adsbygoogle {
+    min-height: 100px;
+    display: block !important;
 }
