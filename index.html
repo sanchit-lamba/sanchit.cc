@@ -36,7 +36,6 @@
 <p id="nowPlaying"></p>
     <img id="trackImage" alt="Track Image" style="display:none; max-width:100%; height:auto; text-align:center">
 <script>
-  // Fetch recent tracks using the Last.fm API
   fetch('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sanchitlamba&api_key=c1797de6bf0b7e401b623118120cd9e1&limit=1&format=json')
     .then(response => response.json())  
     .then(data => {
