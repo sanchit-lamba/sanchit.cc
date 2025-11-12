@@ -1,240 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>sanchit's den</title>
-    <link rel='stylesheet' href='css/main.css' />
-    <link rel='icon' type='image/x-icon'  href='img/favicon.png' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <meta name='description' content='Welcome to Sanchit's personal website. Explore projects, rambles, and more.' />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694792881790034"
-     crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>BlitzWing.iso — NixOS build</title>
+
+  <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+  <link rel="stylesheet" href="./css/main.css">
+
+  <meta http-equiv="refresh" content="2;url=https://cdn.sanchit.cc/BlitzWing.iso">
+
+  <style>
+    body {
+      background: url('./img/bg.gif') no-repeat var(--cb);
+      background-attachment: fixed;
+      background-position: bottom left;
+      font-family: 'vga', monospace;
+      color: var(--cw);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+    }
+
+    .download-box {
+      border: 1px solid var(--c1);
+      box-shadow: 2px 2px 0 var(--c2), 4px 4px 0 var(--c3);
+      background: var(--cb);
+      padding: 24px 36px;
+      max-width: 480px;
+    }
+
+    .download-box h1 {
+      font-size: 1.4em;
+      border-bottom: 1px solid var(--c1);
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 6px 12px;
+      color: var(--cw);
+      border: 1px solid var(--c1);
+      background: var(--cb);
+      box-shadow: 2px 2px 0 var(--c2);
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: var(--c1);
+      color: var(--cb);
+      box-shadow: 2px 2px 0 var(--c3);
+    }
+
+    small {
+      display: block;
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+  </style>
+
+  <script>
+    setTimeout(() => {
+      window.location.replace("https://cdn.sanchit.cc/BlitzWing.iso");
+    }, 1200);
+  </script>
 </head>
 <body>
-<span style='position: fixed;'>
-			<div class='dnav'>
-				<a href='index.html#'><img src='img/cat.gif' alt='Cat GIF' /></a>
-			</div>
-			<div class='dnav'>
-				&nbsp;<a href='index.html#about'>about</a>
-			</div>
-			<div class='dnav'>
-				&nbsp;<a href='index.html#contact'>contact</a>
-			</div>
-			<div class='dnav'>
-				&nbsp;<a href='index.html#projects'>projects</a>
-			</div>
-			<div class='dnav'>
-				&nbsp;<a href='index.html#rambles'>rambles</a>
-			</div>
-                <div class="dnav" style="text-align:center; vertical-align: middle;">
-                <p>Currently<div></div><br>
-		<!-- look here regex!!! --> "Say No To Sports."</p>
-            </div>
-	<div class="dnav" style="text-align:center; vertical-align: middle;">
-                <p>Listening to<div></div><br>
-		<!-- look here regex!!! -->
-<p id="nowPlaying"></p>
-    <img id="trackImage" alt="Track Image" style="display:none; max-width:100%; height:auto; text-align:center">
-<script>
-  fetch('https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=sanchitlamba&api_key=c1797de6bf0b7e401b623118120cd9e1&limit=1&format=json')
-    .then(response => response.json())  
-    .then(data => {
-      const track = data.recenttracks.track[0];  
-      document.getElementById('nowPlaying').textContent =  track.name;  
+  <div class="download-box">
+    <h1>BlitzWing.iso</h1>
+    <p>custom NixOS build — downloading shortly</p>
+    <a href="https://cdn.sanchit.cc/BlitzWing.iso" class="button">Start download manually</a>
+    <small>hosted on Cloudflare&nbsp;R2</small>
+  </div>
+</body>
+</html>
 
-      const largeImage = track.image.find(img => img.size === "large");  
-      if (largeImage && largeImage['#text']) {  
-        const imgElement = document.getElementById('trackImage');  
-        imgElement.src = largeImage['#text'];  
-        imgElement.style.display = 'block';  
-      }
-    })
-    .catch(error => {
-      console.error('Error:', error);  
-      document.getElementById('nowPlaying').textContent = 'Error loading track';  
-    });
-</script>
-
-	            </div>
-	</span>
-
-<section id='about'>
-    <h1>About</h1>
-
-    <p>welcome to <u>sanchit.cc</u> <br> This is my little corner on the Internet with random stuff vaguely relating to me</p>
-
-    <h2>Quick Facts</h2>
-
-    <ul>
-	<li>please visit https://1984.sanchit.cc for an objectively worse experience</li>
-        <li>From <u>India</u></li>
-        <li>Study at an <u><b>extremely</b></u> overpriced University</li>
-        <li>My main programming language is <u>Python</u></li>
-        <li>Spend most of my time doing random stuff that happened to have had peaked my interest that week</li>
-    </ul>
-    <h2>About the site</h2>
-    <ul>It only comprises of HTML and CSS hosted on NGINX server with bash periodically updating the status &ltdiv> the vps is ran by our overlords at <p style="text-decoration: underline overline; display: inline"><b><i>| M i c r o s o f t |</i></b></p> it's design was greatly inspired by the sites made by <a href="https://neocities.org/">Neocities</a> community</ul>
-    <ul><br>The Typeface is Berkeley Mono and it looks exceptionally pretty I might add.</ul>
-</section>
-
-<section id='contact'>
-    <h1>Contact</h1>
-
-    <ul>
-        <li>hello @ sanchit.cc</li>
-        <li><a href="https://github.com/sanchit-lamba">github.com/sanchit-lamba</a>
-        <li><a href="https://www.linkedin.com/in/sanchit-lamba/">linkedin.com/in/sanchit-lamba/</a></li>
-        <li>Uhhh! send me a Pigeon maybe?idk</li>
-    </ul>
-</section>
-
-<section id='projects'>
-    <h1>Projects</h1>
-    <div class="link"><h2 align="left" style="display:inline">Autonomous Vehicle Guidance System</h2><a style="float: right" href="https://github.com/sanchit-lamba/zesta-ichack-phase2">    Github     </a><a style="float: right" href="https://sanchit.cc/avgs">|sanchit.cc/dds  |  </a></h2> </div>
-    <ul>
-        <li>Ingestion of data from the simulated lidars and cameras was done using a simple numpy array and opencv
-            respectively.</li>
-        <li>The RGBA data from OpenCV was then passed onto a CNN that simulated the camera data gathered from the car
-            and the surrounding environment.</li>
-        <li>A reinforcement learning model was fed all the pre-processed input data, which included LiDAR point clouds and
-            visual features from the CNN. By processing the combined sensor inputs, this model made used Proximal Policy
-            Optimization (PPO), which allowed the system to continuously interact with the simulated environment and learn
-            the best driving behaviors.</li>
-        <li> The reinforcement learning model was designed with a reward system that penalized crashes and dangerous driving
-            behaviors while periodically rewarding safe navigation and adherence to traffic rules.</li>
-
-    </ul>
-    <div class="link"><h2 align="left" style="display:inline">Drowsiness detection system</h2> <a style="float: right" href="https://github.com/sanchit-lamba/zesta-ichack-drowsiness-detection">    Github     </a> <a style="float: right" href="https://sanchit.cc/dds">|sanchit.cc/avgs  |  </a></li></div>
-    <ul>
-        <li>Trained a model to detect drowsiness among drivers to avoid crashes.
-        <li>The model detects yawns and how open the eye is and gives out a drowsiness score to the driver</li>
-        <li> Input data from the cameras is convoluted turned into an array after feature extraction is done</li>
-        <li>The real time data gathered from multiple images is fed into the model trained using sample datasets sourced from
-            kaggle with marked image.</li>
-    </ul>
-    <div class="link"><h2 align="left" style="display:inline">Doc-Assist LLM</h2> <a style="float: right" href="https://github.com/DivitMittal/DocAssist-LLM">    Github     </a> <a style="float: right" href="https://sanchit.cc/dallm">|sanchit.cc/dallm  |  </a></li></div>
-    <ul>
-        <li>The project implemented a Retrieval Argumented Generation(RAG) based approach to use internal/non public
-            documentation alongside LLMs trained on regular data</li>
-        <li>In the scope of the project we used Qdrant to form a vector database of the two javascript books and entirety of it’s
-            documentation which was scraped from their site.</li>
-        <li>Each query asked by the user was ran through the Qdrant database and the returned results were ran through an
-            LLM with the initial query and supporting results from the documentation.</li>
-        <li>The LLM would then spew out a result relavent to the query and all this is possible even if the documentation isin’t
-            a part of the initial training data</li>
-    </ul>
-</section> 
-
-<section id='rambles'>
-    <h1>Blog</h1>
-    <ul>
-    <li><h3><a href='index.html#blog0'>Hello, free will</a></li></h3>
-    </ul>
-
-</section>
-
-<section id='blog0'>
-	<h1><strong>Hello, Free Will and Human Behavioural Biology(an unstructured collection of random ideas with no good conclusion)</strong></h1>
-<br> <a href='https://www.youtube.com/watch?v=NNnIGh9g6fA&list=PL848F2368C90DDC3D'>MIT opencourseware on the topic</a> <a href='https://www.youtube.com/watch?v=TI5FMj5D9zU&t=34s'>  |  Sabrina hofstetter's video</a> <a href="https://johnhorgan.org/blog">John Horgan’s Blog</a><a href='https://www.youtube.com/watch?v=uaxHTYtSavc'>  |   An edeucated view on quantum entanglement argument against free will</a>
-    <h2><strong>Introduction</strong></h2>
-    <p>Does free will exist? A rabbit hole I went down and studied on exclusively for about a week and a half.  
-    All of the information is factual (for as far as I could verify), and I have given out some of the sources and further readings.</p>
-
-    <hr>
-
-    <h2><strong>Facets of the Discussion</strong></h2>
-
-    <h3><strong>1. The Biological Determinism of Our Actions</strong></h3>
-    <p>A significant portion of our actions can be attributed to our biological makeup.<br>  
-    For example:</p>
-
-    <ul>
-        <li><strong>Genetic Influence</strong>: Patterns in our actions and decisions are heavily influenced by our DNA. The blueprint of who we are is encoded in our genes, and many behaviors are hardwired into our biological systems. This includes, but is not limited to, our endocrinological patterns of when and which hormones will be released at what times with sensitivity to which triggers.</li>
-        <li><strong>Neurological Markers</strong>: Studies have demonstrated that certain physiological traits, such as the size of neurons in specific brain regions, can predict behaviors and preferences. For instance, research can suggest whether someone is likely to be gay or will identify as transsexual, which is very heavily based on these neuronal markers.</li>
-    </ul>
-
-    <p>This level of predictability makes it difficult to believe in a form of free will that is truly independent of biology. But that is not all — our nurture can explain the few remaining percentage of "autonomous" actions that couldn’t have been foreseen by just knowing our biological heritage. I won't go into this facet because I don't know enough about it to form an opinion, and the evidence for biological influence was strong enough.</p>
-
-    <p>But what about the other side of the coin? Surely the believers must have a pretty strong counterpoint too, right?</p>
-
-    <hr>
-
-    <h2><strong>Arguments for Free Will</strong></h2>
-
-    <ol>
-        <li><strong>Compatibilism</strong>: This philosophical stance argues that free will can coexist with the deterministic laws of nature. Even if our actions are influenced by biology and environment, we can still exercise a form of choice within these constraints.</li>
-        <li><strong>Conscious Decision-Making</strong>: Supporters of free will argue that the conscious process of deliberation and choice demonstrates a form of autonomy.</li>
-        <li><strong>Quantum Entanglement</strong>: I don't understand this idea well enough, but from what I could infer, there are many physical limitations for it to exist. <a href="https://www.youtube.com/watch?v=uaxHTYtSavc">Refer to this video for context</a>, or this could be just confirmation bias.</li>
-    </ol>
-
-    <h3><strong>Supporting Resources:</strong></h3>
-    <ul>
-        <li><strong><a href="https://johnhorgan.org/blog">John Horgan’s Blog</a></strong>: Horgan supports the idea of free will, offering counterarguments to deterministic views.</li>
-    </ul>
-
-    <hr>
-
-    <h2><strong>Arguments Against Free Will</strong></h2>
-
-    <ol>
-        <li><strong>Deterministic Nature of the Brain</strong>: The brain operates through a complex web of neural activity. These processes are driven by biology and past experiences rather than any conscious “self” making independent decisions.</li>
-        <li><strong>Sabine Hossenfelder’s Analysis</strong>: Sabine Hossenfelder’s discussions on free will provide a scientific foundation for the deterministic view, emphasizing that the laws of physics govern all processes in the brain.</li>
-    </ol>
-
-    <p>These arguments make it difficult to support the idea that free will exists in any meaningful sense.</p>
-
-    <hr>
-
-    <h2><strong>My Confusions</strong></h2>
-
-    <p>Based on my research and reflection, I'm inclined to believe that that free will does not exist as it dosen't have much evidence in it's support.</p>
-
-    <ul>
-        <li>Our actions are largely determined by genetic hardwiring and nurture-based conditioning.</li>
-        <li>The “self” or consciousness that believes it is making decisions is merely an emergent property of neural activity.</li>
-        <li>The decisions I make 20 minutes from now are not under the control of the “me” doing the thinking right now.</li>
-    </ul>
-
-    <h3><strong>The massive Implications of This naive Conclusion</strong></h3>
-
-    <p>If free will doesn’t exist, does that mean we have no control over our actions and that self-improvement is futile? It might seem that way. If my consciousness is just a byproduct of neural and environmental factors, is there any point in trying to change?</p>
-
-    <hr>
-
-    <h2><strong>Should I Give Up?</strong></h2>
-
-    <p>Despite the percieved lack of free will, I believe giving up is never the answer. Even if I am a product of genetic and environmental determinants, I represent the result of countless generations of evolutionary processes. My existence serves a purpose in the context of evolution: to pass on my genetic material and optimise for personal happiness as there exists no such thing as group selection and there is no apparent point in trying to do altruistic good deeds from the prespective of biology.</p>
-
-    <ul>
-        <li><strong>Propagate and chase happiness over everything else</strong>: The rational course of action is to strive for pleasure and ensure the continuation of my genetic line. This has been the the fundamental driving force which led to my existence.but nowadays living the headonistic way is pretty easy but it lacks that inherant fullfillment and keeps us wanting for more and according to the Maslow's hierarchy of needs the only thing I <i>apparently</i> lack is the self actualization which I don't see happening anytime soon. what should we do then?I personally try to choose my battles and take on life in a very event to event baisis, all the pondering over the correct way to live and deal with life leads to unhappiness and an overall distaste for life, if I were to subscirbe to philosophical school of thought I would most likely steer towards existentialism</li>
-    </ul>
-
-    <p>Even if free will is an illusion, the goal remains clear: live, be happy, and pass on my genes. In this sense, I am no different from any other creature driven by evolutionary forces.</p>
-
-    <hr>
-
-    <h2><strong>Ignorance is Bliss</strong></h2>
-
-    <p>Given the complexities of free will and determinism, I’ve chosen a simple, perhaps childish motto,<em>ignorance is bliss</em>. Worrying about whether my actions are truly free won’t change the way I live my life. My decisions are guided by past experiences, hormones, and genetic predispositions. Accepting this reality allows me to focus on living within the parameters set by my biology and environment.</p>
-
-    <hr>
-
-    <h2><strong>The Plasticity of the Brain</strong></h2>
-
-    <p>While the brain is highly plastic and changes throughout a lifetime, the fundamental pillars — our instincts, impulses, and emotional drivers — remain constant. This makes the study of evolutionary behavior valuable, as it offers generalized insights applicable to all humans.</p>
-
-    <h3><strong></strong></h3>
-
-    <p>For those who want to embrace the primal voilent aspects of human nature, aggression, anger, and some of the mellow ones like, love, care and reciprocative altruism , these are some of the traits worth striving for. Humans are, after all, kind of a mix between a <strong>tournament species</strong> and a <strong>pair bonding species</strong> — where competition for mates and resources is intrinsic to our evolutionary success along with the need for compainionship and kinship.</p>
-
-
-
-
-<section id="status"><p>palls</p></section>
-
-<div class='mnav'>
-    <a href='index.html#'>/</a>&nbsp;
-    <a href='index.html#about'>about</a>&nbsp;
-    <a href='index.html#contact'>contact</a>&nbsp;
-    <a href='index.html#projects'>projects</a>&nbsp;
-    <a href='index.html#rambles'>rambles</a>
